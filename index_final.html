@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn Your LinkedIn Into Your Growth Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #41474f;
+            line-height: 1.6;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f8f9ff 100%);
+            padding: 80px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -400px;
+            right: -266.67px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(146, 204, 255, 0.2) 0%, rgba(248, 249, 255, 0) 100%);
+            filter: blur(50px);
+            opacity: 0.6;
+            border-radius: 9999px;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 200, 255, 0.1) 0%, rgba(248, 249, 255, 0) 100%);
+            filter: blur(40px);
+            opacity: 0.4;
+            border-radius: 9999px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 52.8px;
+            color: #121c2a;
+            margin-bottom: 16px;
+            letter-spacing: -0.96px;
+        }
+
+        .hero-content .highlight {
+            color: #003d5f;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content .underline {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            opacity: 0.5;
+            background: repeating-linear-gradient(90deg, #003d5f 0px, #003d5f 2px, transparent 2px, transparent 4px);
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 31.2px;
+            color: #41474f;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 28.8px;
+            color: #41474f;
+            margin-bottom: 40px;
+            max-width: 576px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #005eb5;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #004a94;
+            transform: translateY(-2px);
+        }
+
+        .cta-button svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-image {
+            background: #e6eeff;
+            border: 1px solid rgba(193, 199, 208, 0.3);
+            border-radius: 16px;
+            padding: 1px;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            mix-blend-mode: luminosity;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border: 1px solid rgba(193, 199, 208, 0.2);
+            border-radius: 12px;
+            padding: 17px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .floating-card.top-card {
+            top: 32px;
+            left: -48px;
+        }
+
+        .floating-card.bottom-card {
+            bottom: 48px;
+            right: -40px;
+        }
+
+        .floating-icon {
+            width: 48px;
+            height: 48px;
+            background: #d6e3ff;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .floating-bottom-icon {
+            width: 40px;
+            height: 40px;
+            background: #d9e3f6;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .floating-text h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #41474f;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .floating-text p {
+            font-size: 24px;
+            font-weight: 700;
+            color: #003d5f;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ===== BENEFITS SECTION ===== */
+        .benefits-section {
+            background: #eff4ff;
+            border-top: 1px solid rgba(193, 199, 208, 0.2);
+            padding: 80px 40px;
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #121c2a;
+            margin-bottom: 22.895px;
+            line-height: 38.4px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #41474f;
+            max-width: 768px;
+            margin: 0 auto;
+            line-height: 28.8px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: #f8f9ff;
+            border: 1px solid rgba(193, 199, 208, 0.3);
+            border-radius: 16px;
+            padding: 33px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card:nth-child(5) {
+            grid-column: 2 / span 2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(146, 204, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #121c2a;
+            margin-bottom: 12px;
+            line-height: 31.2px;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            color: #41474f;
+            line-height: 24px;
+        }
+
+        .section-divider {
+            border-top: 1px solid rgba(193, 199, 208, 0.2);
+            padding-top: 33px;
+            margin-top: 40px;
+        }
+
+        .divider-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #003d5f;
+            text-align: center;
+            line-height: 31.2px;
+        }
+
+        /* ===== AUDIT OFFER SECTION ===== */
+        .audit-section {
+            background: #f8f9ff;
+            padding: 80px 88px;
+        }
+
+        .audit-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #005eb5;
+            border-radius: 24px;
+            padding: 66px;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .audit-container::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #d6e3ff 0%, rgba(248, 249, 255, 0) 100%);
+            filter: blur(30px);
+            opacity: 0.5;
+            border-radius: 9999px;
+        }
+
+        .audit-left {
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(92, 158, 254, 0.2);
+            padding: 8px 16px;
+            border-radius: 9999px;
+            margin-bottom: 24px;
+        }
+
+        .featured-badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #00356b;
+            text-transform: uppercase;
+            letter-spacing: 0.35px;
+        }
+
+        .audit-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #121c2a;
+            margin-bottom: 24px;
+            line-height: 52.8px;
+            letter-spacing: -0.96px;
+        }
+
+        .audit-price-box {
+            background: rgba(214, 227, 255, 0.3);
+            border: 1px solid rgba(168, 200, 255, 0.5);
+            border-radius: 16px;
+            padding: 24px 25px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .audit-price-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #41474f;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+        }
+
+        .audit-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #005eb5;
+            letter-spacing: -3.2px;
+            line-height: 64px;
+        }
+
+        .audit-description {
+            font-size: 18px;
+            color: #41474f;
+            line-height: 28.8px;
+            margin-top: 24px;
+        }
+
+        .audit-right {
+            background: white;
+            border: 1px solid rgba(193, 199, 208, 0.3);
+            border-radius: 16px;
+            padding: 33px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        .audit-form-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #121c2a;
+            margin-bottom: 32px;
+            line-height: 31.2px;
+        }
+
+        .audit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .audit-list-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .list-icon {
+            width: 20px;
+            height: 24px;
+            flex-shrink: 0;
+            color: #005eb5;
+        }
+
+        .list-content h4 {
+            font-weight: 700;
+            color: #121c2a;
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .list-content p {
+            font-size: 16px;
+            color: #41474f;
+        }
+
+        .audit-button {
+            width: 100%;
+            padding: 16px 32px;
+            background: #005eb5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+            margin-top: 32px;
+            border-top: 1px solid rgba(193, 199, 208, 0.3);
+            padding-top: 25px;
+            margin-top: 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .audit-button:hover {
+            background: #004a94;
+        }
+
+        .audit-button-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .audit-button-subtext {
+            font-size: 12px;
+            color: #41474f;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* ===== LEAD FORM SECTION ===== */
+        .form-section {
+            background: #eff4ff;
+            border-top: 1px solid rgba(193, 199, 208, 0.2);
+            padding: 80px 40px;
+        }
+
+        .form-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: flex-start;
+        }
+
+        .form-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-left h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #121c2a;
+            margin-bottom: 24px;
+            line-height: 52.8px;
+            letter-spacing: -0.96px;
+        }
+
+        .form-left-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #41474f;
+            margin-bottom: 40px;
+            line-height: 31.2px;
+        }
+
+        .form-left-image {
+            background: transparent;
+            border: 1px solid rgba(193, 199, 208, 0.2);
+            border-radius: 16px;
+            height: 400px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-right {
+            background: #f8f9ff;
+            border: 1px solid rgba(193, 199, 208, 0.3);
+            border-radius: 16px;
+            padding: 49px;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: #121c2a;
+            margin-bottom: 8px;
+            letter-spacing: 0.7px;
+            text-transform: none;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px 17px;
+            border: 1px solid #c1c7d0;
+            border-radius: 8px;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #121c2a;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #717880;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #005eb5;
+            box-shadow: 0 0 0 3px rgba(0, 94, 181, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px 32px;
+            background: #005eb5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+            margin-top: 16px;
+            border-top: 1px solid rgba(193, 199, 208, 0.3);
+            padding-top: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: #004a94;
+        }
+
+        .form-disclaimer {
+            font-size: 12px;
+            color: #41474f;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .form-status {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-container,
+            .form-container,
+            .audit-container {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-card:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .hero-section,
+            .audit-section {
+                padding: 40px 20px;
+            }
+
+            .audit-container {
+                padding: 40px 24px;
+                gap: 24px;
+            }
+
+            .hero-content h1,
+            .form-left h2,
+            .audit-heading {
+                font-size: 32px;
+                line-height: 38.4px;
+            }
+
+            .form-right {
+                padding: 24px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content,
+        .benefit-card,
+        .audit-container,
+        .form-right {
+            animation: slideIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
+                    <span style="background: rgba(214, 227, 255, 0.5); color: #005eb5; padding: 3px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px;">STRATEGY</span>
+                    <span style="background: rgba(214, 227, 255, 0.5); color: #005eb5; padding: 3px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px;">CONTENT</span>
+                    <span style="background: rgba(214, 227, 255, 0.5); color: #005eb5; padding: 3px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px;">MANAGEMENT</span>
+                    <span style="background: rgba(214, 227, 255, 0.5); color: #005eb5; padding: 3px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px;">PERSONAL BRANDING</span>
+                </div>
+                <h1>Turn Your LinkedIn Into <span class="highlight">Growth Engine<span class="underline"></span></span></h1>
+                <p class="hero-subtitle">From 0 to a LinkedIn presence people notice, trust, and remember.</p>
+                <p class="hero-description">You focus on your work. We take care of your LinkedIn. From strategy and content scripting to consistent management, we build your personal brand with a clear plan—so you can attract the right audience, build authority, and create more opportunities.</p>
+                <button class="cta-button" id="scrollToForm">
+                    Get Your LinkedIn Growing
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="https://www.figma.com/api/mcp/asset/c5059539-f81d-4f57-97b4-b17b3fb22869.png" alt="LinkedIn Growth Results">
+                <div class="floating-card top-card">
+                    <div class="floating-icon">📊</div>
+                    <div>
+                        <div class="floating-text">
+                            <h3>Impression Growth</h3>
+                            <p>+342%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card bottom-card">
+                    <div class="floating-bottom-icon">✓</div>
+                    <div>
+                        <p style="font-size: 16px; color: #121c2a; font-weight: 600;">Authority Built</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <div class="section-header">
+                <h2>LinkedIn Growth That Goes Beyond Likes</h2>
+                <p>A strong LinkedIn profile isn't built by posting randomly. It's built with the right strategy, positioning, content, and consistency.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Stronger Personal Brand</h3>
+                    <p>Position yourself as an authority in your industry—someone worth following, listening to, and doing business with.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Consistent Growth</h3>
+                    <p>Stop relying on viral luck. We build a sustainable audience of people who actually care about your expertise.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✍️</div>
+                    <h3>Content That Sounds Like You</h3>
+                    <p>No robotic AI posts. We craft strategic content and scripts based on your unique voice, insights, and stories.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>The Right Audience</h3>
+                    <p>Visibility is useless if it's the wrong people. We target clients, high-value collaborators, and top recruiters.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Save Your Valuable Time</h3>
+                    <p>No more staring at a blank screen wondering what to post. We handle the heavy lifting of ideation, creation, and scheduling so you can focus on running your business.</p>
+                </div>
+            </div>
+
+            <div class="section-divider">
+                <p class="divider-text">Your Expertise. Our Strategy. Better Visibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIT OFFER SECTION -->
+    <section class="audit-section">
+        <div class="audit-container">
+            <div class="audit-left">
+                <div class="featured-badge">
+                    <span>⭐</span>
+                    <span class="featured-badge-text">Featured Offer</span>
+                </div>
+                <h2 class="audit-heading">Not Sure What's Holding Your LinkedIn Back?</h2>
+                <div class="audit-price-box">
+                    <div class="audit-price-label">Get Your LinkedIn Audited for Just</div>
+                    <div class="audit-price">₹1</div>
+                </div>
+                <p class="audit-description">Sometimes, you don't need more content. You need to know what's actually wrong with your current LinkedIn strategy before you spend another minute creating posts.</p>
+            </div>
+
+            <div class="audit-right">
+                <h3 class="audit-form-title">What we'll uncover in your audit:</h3>
+                <div class="audit-list">
+                    <div class="audit-list-item">
+                        <svg class="list-icon" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 12L8 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="list-content">
+                            <h4>What's currently working</h4>
+                            <p>Identify your hidden strengths.</p>
+                        </div>
+                    </div>
+                    <div class="audit-list-item">
+                        <svg class="list-icon" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 12L8 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="list-content">
+                            <h4>What's holding you back</h4>
+                            <p>Pinpoint the exact mistakes costing you reach.</p>
+                        </div>
+                    </div>
+                    <div class="audit-list-item">
+                        <svg class="list-icon" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 12L8 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="list-content">
+                            <h4>Where you are losing opportunities</h4>
+                            <p>Fix profile leaks that drive profile visitors away.</p>
+                        </div>
+                    </div>
+                    <div class="audit-list-item">
+                        <svg class="list-icon" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 12L8 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="list-content">
+                            <h4>What your content should focus on</h4>
+                            <p>A refined content direction for your specific goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://payments.cashfree.com/forms/getaudit" target="_blank" class="audit-button">
+                    <span class="audit-button-text">
+                        Get My ₹1 Audit
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </a>
+                <p class="audit-button-subtext">₹1 Today. Clarity Before You Invest More.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD FORM SECTION -->
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-left">
+                <h2>Ready to Take LinkedIn Seriously?</h2>
+                <p class="form-left-subtitle">Tell us a little about yourself and where you want to go.</p>
+                <div class="form-left-image"></div>
+            </div>
+
+            <div class="form-right">
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" id="fullName" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" id="email" placeholder="john@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-input" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+
+                    <button type="submit" class="form-submit">
+                        Let's Grow My LinkedIn
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-left: 8px;">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <p class="form-disclaimer">No complicated process. No long sales pitch. Just a conversation about your growth.</p>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDPdBDN1FzbRW_5GJ-z2LFgcmUPCgQM9iIbC2LEh45i_KJLAM89aY58g259sINH9LVSQ/exec';
+        var form = document.getElementById('leadForm');
+        var statusDiv = document.getElementById('formStatus');
+        var scrollBtn = document.getElementById('scrollToForm');
+
+        scrollBtn.addEventListener('click', function() {
+            var formSection = document.querySelector('.form-section');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('fullName').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+
+            var params = new URLSearchParams();
+            params.append('name', name);
+            params.append('email', email);
+            params.append('phone', phone);
+
+            var fetchUrl = SCRIPT_URL + '?' + params.toString();
+
+            fetch(fetchUrl, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(function() {
+                showSuccess('Thank you! We will contact you soon. Check your email for confirmation.');
+                form.reset();
+            })
+            .catch(function() {
+                showSuccess('Thank you! We will contact you soon. Check your email for confirmation.');
+                form.reset();
+            });
+        });
+
+        function showSuccess(message) {
+            statusDiv.className = 'form-status success';
+            statusDiv.textContent = message;
+            setTimeout(function() {
+                statusDiv.className = 'form-status';
+            }, 5000);
+        }
+
+        function showError(message) {
+            statusDiv.className = 'form-status error';
+            statusDiv.textContent = message;
+            setTimeout(function() {
+                statusDiv.className = 'form-status';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
